@@ -13,13 +13,13 @@
   background-image: url("C:\Users\laksh\OneDrive\Documents\SharpenerProjects\ReactJs\MyMoney\frontend\src\assets\background.png");
 }
 .brand-color {
-  color: #ff642d;
+  color: #008275;
 }
 
 .brand-bg-color {
-  background-color: #ff642d;
+  background-color: #00bc90;
 }
 .card {
   border-radius: 16px;
-  box-shadow: rgba(21, 22, 24, 0.1) 5px 5px 50px;
+  box-shadow: rgba(21, 22, 24, 0.1) 3px 3px 30px;
 }
