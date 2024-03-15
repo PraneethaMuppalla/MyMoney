@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.headings-font {
+  font-family: "Factor A", Arial, Helvetica, sans-serif;
+}
+
+.para-font {
+  font-family: Inter, sans-serif;
+}
+.background {
+  background-image: url("C:\Users\laksh\OneDrive\Documents\SharpenerProjects\ReactJs\MyMoney\frontend\src\assets\background.png");
+}
+.brand-color {
+  color: #ff642d;
+}
+
+.brand-bg-color {
+  background-color: #ff642d;
+}
+.card {
+  border-radius: 16px;
+  box-shadow: rgba(21, 22, 24, 0.1) 5px 5px 50px;
+}

@@ -1,5 +1,14 @@
 import React from "react";
 
+import Navigation from "./components/Navigation/Navigation";
+import AuthForm from "./components/Auth/AuthForm";
 export default function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <>
+      <Navigation />
+      <main className="background h-[90vh] w-full px-6 md:px-10">
+        <AuthForm />
+      </main>
+    </>
+  );
 }
