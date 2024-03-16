@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 import axiosInstance from "../../utils/constants";
 import Container from "../Layout/Container";
@@ -7,6 +8,8 @@ const AuthForm = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const confirmPasswordRef = useRef();
+
+  const navigate = useNavigate();
 
   const [isLoggedInView, setIsLoggedInView] = useState(true);
   const loginViewHandler = () => {
@@ -57,6 +60,9 @@ const AuthForm = () => {
     }
   };
 
+  const navigationHandler = () => {
+    navigate("/reset-password");
+  };
   return (
     <Container height="h-[95%]">
       <form
@@ -79,7 +85,7 @@ const AuthForm = () => {
             required
           />
         </div>
-        <div className="mb-3">
+        <div className="mb-3 para-font ">
           <label htmlFor="password" className="block para-font  text-base">
             Password
           </label>
@@ -91,6 +97,14 @@ const AuthForm = () => {
             className="mt-3 block w-full px-3 py-2 border-2  rounded-md text-sm 
           focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 required:"
           />
+          {isLoggedInView && (
+            <p
+              className="block text-right mt-3 brand-color para mb-0 cursor-pointer"
+              onClick={navigationHandler}
+            >
+              Forgot your password?
+            </p>
+          )}
         </div>
         {!isLoggedInView && (
           <div className="mb-3">
@@ -103,7 +117,7 @@ const AuthForm = () => {
               min={6}
               ref={confirmPasswordRef}
               className="mt-3 block w-full px-3 py-2 border-2  rounded-md text-sm 
-          focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 required:"
+              focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 required:"
               required
             />
           </div>
