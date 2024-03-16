@@ -51,6 +51,7 @@ const signUpUser = async (req, res, next) => {
       .status(201)
       .json({ success: true, message: "User Created", data: response });
   } catch (err) {
+    console.error(err);
     next(err);
   }
 };

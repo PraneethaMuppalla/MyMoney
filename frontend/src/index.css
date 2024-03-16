@@ -20,6 +20,7 @@
   background-color: #00bc90;
 }
 .card {
-  border-radius: 16px;
-  box-shadow: rgba(21, 22, 24, 0.1) 3px 3px 30px;
+  border: #00bc90 solid 2px;
+  border-radius: 10px;
+  /* box-shadow: rgba(21, 22, 24, 0.1) 3px 3px 30px; */
 }

@@ -16,7 +16,7 @@ function isValidEmail(value) {
 }
 
 function isValidPassword(value) {
-  return value && value.trim().length > 6;
+  return value && value.trim().length >= 6;
 }
 
 exports.isValidText = isValidText;

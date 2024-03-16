@@ -6,7 +6,7 @@ export default function App() {
   return (
     <>
       <Navigation />
-      <main className="background h-[90vh] w-full px-6 md:px-10">
+      <main className="background h-[90vh] w-full px-4 md:px-10">
         <AuthForm />
       </main>
     </>
