@@ -15,9 +15,6 @@ const signUpUser = async (req, res, next) => {
   const { name, email, password } = req.body;
   //validation
   let errors = {};
-  if (!isValidText(name)) {
-    errors.title = "Invalid name.";
-  }
   if (!isValidEmail(email)) {
     errors.email = "Invalid email";
   }
@@ -43,7 +40,6 @@ const signUpUser = async (req, res, next) => {
     //creating new user
     const hashedPassword = await bcrypt.hash(password, 10);
     const response = await User.create({
-      name,
       email,
       password: hashedPassword,
     });

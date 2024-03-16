@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
 
 import axiosInstance from "../../utils/constants";
+import Container from "../Layout/Container";
 
 const AuthForm = () => {
-  const nameInputRef = useRef();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const confirmPasswordRef = useRef();
@@ -27,6 +27,7 @@ const AuthForm = () => {
           password,
         });
         console.log(response.data);
+        localStorage.setItem("token", response.data.token);
       } catch (err) {
         console.error(err);
         alert("Login failed");
@@ -34,12 +35,10 @@ const AuthForm = () => {
         e.target.reset();
       }
     } else {
-      const name = nameInputRef.current.value;
       const confirmPassword = confirmPasswordRef.current.value;
       if (password === confirmPassword) {
         try {
           const response = await axiosInstance.post("/user/sign-up", {
-            name,
             email,
             password,
           });
@@ -59,7 +58,7 @@ const AuthForm = () => {
   };
 
   return (
-    <div className="flex  justify-center items-center w-full h-[95%] ">
+    <Container height="h-[95%]">
       <form
         className=" w-[90%] max-w-[428px] p-6 md:p-8 card"
         onSubmit={submitHandler}
@@ -67,21 +66,7 @@ const AuthForm = () => {
         <h1 className="headings-font text-2xl font-semibold mb-3">
           {isLoggedInView ? "Log in" : "Create Your account"}
         </h1>
-        {!isLoggedInView && (
-          <div className=" mb-4">
-            <label htmlFor="name" className="block para-font  text-base">
-              Name
-            </label>
-            <input
-              type="text"
-              className="mt-3 block w-full px-3 py-2 border-2  rounded-md text-sm 
-          focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
-              required
-              minLength={3}
-              ref={nameInputRef}
-            />
-          </div>
-        )}
+
         <div className=" mb-3">
           <label htmlFor="email" className="block para-font  text-base">
             Email
@@ -138,7 +123,7 @@ const AuthForm = () => {
             : "Already have an account? Login"}
         </p>
       </form>
-    </div>
+    </Container>
   );
 };
 
