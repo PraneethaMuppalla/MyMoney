@@ -24,3 +24,22 @@
   border-radius: 10px;
   /* box-shadow: rgba(21, 22, 24, 0.1) 3px 3px 30px; */
 }
+.bottom-shadow {
+  /* box-shadow: rgba(51, 59, 81, 0.05) 0px 15px 30px; */
+  box-shadow: rgba(21, 22, 24, 0.1) 0px 3px 30px;
+  /* box-shadow: rgba(1, 7, 27) 150px 15px 30px; */
+}
+.modal {
+  animation: slide-down 300ms ease-out forwards;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

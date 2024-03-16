@@ -6,8 +6,8 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className=" bg-slate-900 h-16 px-4 md:px-10 flex items-center justify-between">
-        <div className=" h-10 md:h-12 bg-white px-2 rounded-md">
+      <nav className=" bg-slate-900 h-12  px-4 md:px-16  lg:px-36 flex items-center justify-between">
+        <div className=" h-10 md:h-10 bg-white px-2 rounded-md">
           {/* <h1 className=" w-auto text-white font-semibold text-2xl ">MyMoney</h1> */}
           <img src={brand} alt="My Money logo" className=" h-full  " />
         </div>

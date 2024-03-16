@@ -17,6 +17,14 @@ const User = sequelize.define("users", {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  profilePicture: {
+    type: Sequelize.STRING,
+  },
+  isProfileComplete: {
+    type: Sequelize.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
+  },
 });
 
 module.exports = User;

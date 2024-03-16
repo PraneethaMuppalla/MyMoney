@@ -93,4 +93,30 @@ const loginUser = async (req, res, next) => {
   }
 };
 
-module.exports = { signUpUser, loginUser };
+const getUserDetails = async (req, res, next) => {
+  try {
+    return res.status(200).json({ user: req.user });
+  } catch (err) {
+    next(err);
+  }
+};
+
+const updateUserDetails = async (req, res, next) => {
+  const { name, profilePicture } = req.body;
+  if (!isValidText(name)) {
+    return res
+      .status(400)
+      .json({ message: "Bad request. Some parameters are passing" });
+  }
+  try {
+    await User.update(
+      { name, profilePicture, isProfileComplete: true },
+      { where: { id: req.user.id } }
+    );
+    res.status(200).json({ success: true });
+  } catch (err) {
+    next(err);
+  }
+};
+
+module.exports = { signUpUser, loginUser, getUserDetails, updateUserDetails };

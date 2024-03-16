@@ -10,7 +10,7 @@ if (!token) {
   });
 } else {
   axiosInstance = axios.create({
-    baseURL: "http://localhost:3000",
+    baseURL: "http://localhost:8080",
     headers: { Authorization: token },
   });
 }
