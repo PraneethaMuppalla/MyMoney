@@ -1,7 +1,8 @@
 import React from "react";
+import AddItem from "../components/AddItem/AddItem";
 
 const Home = () => {
-  return <div>Home</div>;
+  return <AddItem />;
 };
 
 export default Home;

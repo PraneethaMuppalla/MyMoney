@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
+
 import Modal from "../Layout/Modal";
+import DEFAULT_URL from "../../assets/profile-pic.jpg";
 
 const ProfileDetails = (props) => {
   const [imageUrl, setImageUrl] = useState("");
@@ -21,7 +23,7 @@ const ProfileDetails = (props) => {
         <div>
           <div className=" h-24 w-24  mx-auto">
             <img
-              src={imageUrl ? imageUrl : props.imageUrl}
+              src={imageUrl != false ? imageUrl : DEFAULT_URL}
               className="h-full w-full rounded-[50%] border-2  border-green-700"
               alt="Profile Pic"
             />
